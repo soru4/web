@@ -1,0 +1,26 @@
+{% block title %}<h1>Create an Account</h1>{% endblock %}
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+    body{
+        background-color: black;
+        color:white;
+        text-align:center;
+    }
+</style>
+
+{% block content %}
+    <section class="w3-container w3-content w3-round-xlarge" style="background-color:rgb(23, 23, 23); width:30%;">
+    <form method="POST" class="form-group">
+	{% csrf_token %}
+	{% for field in form %}
+    <div class="fieldWrapper">
+        {{ field.errors }}
+        <br>
+        <h3>{{ field.label_tag }}</h3> {{ field }}
+    </div>
+    <br>
+    {%endfor%}
+	<button type="submit" class="btn btn-success">Register</button>
+    </form>
+</section>
+{%endblock%}

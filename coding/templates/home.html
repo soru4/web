@@ -13,7 +13,7 @@
         
 <!-- Sidebar -->
 <div class="w3-sidebar w3-black w3-bar-block" style="width:25%">
-    <h3 class="w3-bar-item">Welcome {{user.name}}</h3>
+    <h3 class="w3-bar-item">{%if user.is_authenticated%} Welcome  {{user}}!{%else%} <a href="{%url 'register'%}" class="w3-bar-item w3-button ">Login!</a>{%endif%}</h3>
     <a href="#" class="w3-bar-item w3-button">Tutors Page</a>
 
     <a href="#" class="w3-bar-item w3-button">Code Editor</a>
@@ -26,8 +26,26 @@
   <div style="margin-left:25%">
   
   <div class="w3-container" style = "background-color:rgb(18, 18, 18); color:white;">
-    <h1>My Page</h1>
+    <h1>The Java Tutoring Club!</h1>
   </div>
+  <section class = "w3-rowPadding " style="color:white;">
+    <section class = "w3-third w3-container" style="background-color:rgb(33, 0, 0); text-align:center;">
+      
+        <h2>1. We will help you with your coding problems!</h2>
+     
+    </section>
+    <section class = "w3-third" style="background-color:rgb(0, 36, 27);text-align:center;">
+       
+            <h2> 2. We will do whole class teaching activities!</h2>
+        
+        
+    </section>
+    <section class = "w3-third w3-container"style="background-color:rgb(38, 1, 33);text-align:center;">
+    
+            <h2>3. We will help you study for CS Exams!</h2>
+        
+    </section>
+  </section>
   
     </body>
 </html>
